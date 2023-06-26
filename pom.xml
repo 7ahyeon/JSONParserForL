@@ -58,7 +58,27 @@
             <artifactId>picocli</artifactId>
             <version>4.6.3</version>
         </dependency>
-
+        <!-- Log4j2 : Java Logging Framework / Logback 및 Log4j 문제 방지 및 개선 목적-->
+        <!-- 버전 선택 사유 : 알려진 취약점이 존재하지 않고 가장 많은 다운로드를 기록함(최소 Java8 지원) -->
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.20.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.20.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j2-impl -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j2-impl</artifactId>
+            <version>2.20.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
