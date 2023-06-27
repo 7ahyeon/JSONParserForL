@@ -1,26 +1,30 @@
 package com.local.jsonparser.rsrv.model.biz.request;
 
-import com.local.jsonparser.rsrv.model.biz.deserialize.JsonToObject;
+import com.local.jsonparser.rsrv.model.biz.deserialize.JsonToObjectService;
+import com.local.jsonparser.rsrv.model.biz.filereader.FileReaderService;
+import com.local.jsonparser.rsrv.model.biz.serialize.ObjectToJsonService;
 import com.local.jsonparser.rsrv.model.dto.req.RsrvRequest;
 // 사용자 서비스 선택에 따른 요청 JSON 생성
 public class RequestServiceImpl implements RequestService {
-    private final JsonToObject jsonToObject;
+    private final JsonToObjectService jsonToObjectService;
+    private final FileReaderService fileReaderService;
+    private final ObjectToJsonService objectToJsonService;
 
-    public RequestServiceImpl(JsonToObject jsonToObject) {
-        this.jsonToObject = jsonToObject;
+    public RequestServiceImpl(JsonToObjectService jsonToObjectService, FileReaderService fileReaderService, ObjectToJsonService objectToJsonService) {
+        this.jsonToObjectService = jsonToObjectService;
+        this.fileReaderService = fileReaderService;
+        this.objectToJsonService = objectToJsonService;
     }
 
     @Override
-    public Object createRequestJson(int select){
-        // 예약 서비스 선택에 따른 파일 이름 설정
-        String jsonFileName = jsonToObject.setJsonFileName(select);
-        // JSON 파일 경로 얻기
-        String jsonFilePath = jsonToObject.getFilePath(jsonFileName);
-        // 파일 읽기
-        String jsonFileContent = jsonToObject.readFile(jsonFilePath);
+    public String createRequestJson(int select){
+        // 요청 파일 읽기
+       String jsonFileContent = fileReaderService.fileRead(select);
         // 요청 Json 전문 Object 바인딩
-        RsrvRequest rsrvRequest = (RsrvRequest) jsonToObject.bindingObject(jsonFileContent);
+        RsrvRequest rsrvRequest = (RsrvRequest) jsonToObjectService.JsonToObject(jsonFileContent);
+        // 요청 Json 전문 생성
+        String jsonContent = objectToJsonService.objectToJson(rsrvRequest);
 
-        return rsrvRequest;
+        return jsonContent;
     }
 }

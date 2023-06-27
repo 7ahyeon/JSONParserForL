@@ -1,6 +1,9 @@
 package com.local.jsonparser.rsrv.model.biz.deserialize;
 
 import com.local.jsonparser.rsrv.model.dto.req.RsrvRequest;
+import com.local.jsonparser.rsrv.model.dto.resp.RsrvResponse;
+
+import java.util.Collections;
 
 public class JsonToObjectServiceImpl implements JsonToObjectService {
     private final JsonToObject jsonToObject;
@@ -10,20 +13,19 @@ public class JsonToObjectServiceImpl implements JsonToObjectService {
     }
 
     @Override
-    public Object JsonToObject(int select){
-        // 예약 서비스 선택에 따른 파일 이름 설정
-        String jsonFileName = jsonToObject.setJsonFileName(select);
-        // JSON 파일 경로 얻기
-        String jsonFilePath = jsonToObject.getFilePath(jsonFileName);
-        // 파일 읽기
-        String jsonFileContent = null;
-        jsonFileContent = jsonToObject.readFile(jsonFilePath);
-        if (jsonFileContent != null) { // 파일 내용이 있을 시
-            // Json 전문 Object 바인딩
-            RsrvRequest rsrvRequest = (RsrvRequest) jsonToObject.bindingObject(jsonFileContent);
+    public Object JsonToObject(String jsonContent){
+        if (jsonContent.contains("ds_rsrvInfo")||jsonContent.contains("ds_cnclInfo")||jsonContent.contains("ds_search")) {
+            // 요청
+            RsrvRequest rsrvRequest = (RsrvRequest) jsonToObject.bindingObject(jsonContent);
             return rsrvRequest;
+        } else if (jsonContent.contains("ds_prcsResult")||jsonContent.contains("ds_prcsResults")) {
+            // 응답
+            RsrvResponse rsrvResponse = (RsrvResponse) jsonToObject.bindingObject(jsonContent);
+            return rsrvResponse;
         } else {
-            return false;
+            // 예외 처리 패턴 getOrElse : 예외 대신 기본 값을 리턴함(null이 아닌 기본 값)
+            return Collections.emptyList();
         }
+
     }
 }

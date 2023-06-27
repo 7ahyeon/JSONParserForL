@@ -8,6 +8,10 @@ import com.local.jsonparser.rsrv.model.biz.deserialize.JsonToObject;
 import com.local.jsonparser.rsrv.model.biz.deserialize.JsonToObjectImpl;
 import com.local.jsonparser.rsrv.model.biz.deserialize.JsonToObjectService;
 import com.local.jsonparser.rsrv.model.biz.deserialize.JsonToObjectServiceImpl;
+import com.local.jsonparser.rsrv.model.biz.filereader.FileReader;
+import com.local.jsonparser.rsrv.model.biz.filereader.FileReaderImpl;
+import com.local.jsonparser.rsrv.model.biz.filereader.FileReaderService;
+import com.local.jsonparser.rsrv.model.biz.filereader.FileReaderServiceImpl;
 import com.local.jsonparser.rsrv.model.biz.request.RequestService;
 import com.local.jsonparser.rsrv.model.biz.request.RequestServiceImpl;
 import com.local.jsonparser.rsrv.model.biz.serialize.ObjectToJson;
@@ -24,7 +28,13 @@ public class AppConfig {  // DI(의존관계 주입) : 객체 생성 및 구현�
     }
 
     public RequestService requestService() {
-        return new RequestServiceImpl(jsonToObject());
+        return new RequestServiceImpl(jsonToObjectService(), fileReaderService(), objectToJsonService());
+    }
+    public FileReaderService fileReaderService() {
+        return new FileReaderServiceImpl(fileReader());
+    }
+    public FileReader fileReader() {
+        return new FileReaderImpl();
     }
     public JsonToObjectService jsonToObjectService() {
         return new JsonToObjectServiceImpl(jsonToObject());
