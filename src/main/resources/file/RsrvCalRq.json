@@ -1,0 +1,14 @@
+{
+    "ds_search": [
+      {
+        "CUST_NO": "A11111",
+        "CONT_NO": "A11111",
+        "PAKG_NO": "1",
+        "CPON_NO": "1",
+        "LOC_CD": "0801",
+        "ROOM_TYPE_CD": "A",
+        "STRT_DATE": "20230601",
+        "END_DATE": "20230630"
+      }
+    ]
+}

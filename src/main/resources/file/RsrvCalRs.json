@@ -1,0 +1,322 @@
+{
+    "ds_result": [
+      {
+        "PROC_DS": "2023-05-30 00:37:39.207",
+        "LOC_CD": "2101",
+        "STRT_DATE": "20230601",
+        "END_DATE": "20230701"
+      }
+    ],
+    "ds_roomStatus": [
+      {
+        "MSG": "예약불가",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230601",
+        "SESN_NM": "봄 비수기 목요일",
+        "ALLC_ROOM_CNT": 0,
+        "RSRV_LOC_DIV_CD": "C",
+        "RSRV_POSBL_CNT": "0"
+      },
+      {
+        "MSG": "예약일반",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230602",
+        "SESN_NM": "봄 비수기 연휴",
+        "ALLC_ROOM_CNT": 95,
+        "RSRV_LOC_DIV_CD": "C",
+        "RSRV_POSBL_CNT": "8"
+      },
+      {
+        "MSG": "예약불가",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230603",
+        "SESN_NM": "봄 성수기 연휴",
+        "ALLC_ROOM_CNT": 0,
+        "RSRV_LOC_DIV_CD": "C",
+        "RSRV_POSBL_CNT": "0"
+      },
+      {
+        "MSG": "예약불가",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230604",
+        "SESN_NM": "봄 성수기 연휴",
+        "ALLC_ROOM_CNT": 0,
+        "RSRV_LOC_DIV_CD": "C",
+        "RSRV_POSBL_CNT": "0"
+      },
+      {
+        "MSG": "예약불가",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230605",
+        "SESN_NM": "봄 성수기 연휴",
+        "ALLC_ROOM_CNT": 0,
+        "RSRV_LOC_DIV_CD": "C",
+        "RSRV_POSBL_CNT": "0"
+      },
+      {
+        "MSG": "예약불가",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230606",
+        "SESN_NM": "봄 비수기 화요일",
+        "ALLC_ROOM_CNT": 0,
+        "RSRV_LOC_DIV_CD": "C",
+        "RSRV_POSBL_CNT": "0"
+      },
+      {
+        "MSG": "예약가능",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230607",
+        "SESN_NM": "봄 비수기 수요일",
+        "ALLC_ROOM_CNT": 8,
+        "RSRV_LOC_DIV_CD": "S",
+        "RSRV_POSBL_CNT": "3"
+      },
+      {
+        "MSG": "예약가능",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230608",
+        "SESN_NM": "봄 비수기 목요일",
+        "ALLC_ROOM_CNT": 8,
+        "RSRV_LOC_DIV_CD": "S",
+        "RSRV_POSBL_CNT": "8"
+      },
+      {
+        "MSG": "예약가능",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230609",
+        "SESN_NM": "봄 비수기 준주말",
+        "ALLC_ROOM_CNT": 5,
+        "RSRV_LOC_DIV_CD": "S",
+        "RSRV_POSBL_CNT": "1"
+      },
+      {
+        "MSG": "예약불가",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230610",
+        "SESN_NM": "봄 비수기 주말",
+        "ALLC_ROOM_CNT": 0,
+        "RSRV_LOC_DIV_CD": "C",
+        "RSRV_POSBL_CNT": "0"
+      },
+      {
+        "MSG": "예약불가",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230611",
+        "SESN_NM": "봄 비수기 일요일",
+        "ALLC_ROOM_CNT": 0,
+        "RSRV_LOC_DIV_CD": "C",
+        "RSRV_POSBL_CNT": "0"
+      },
+      {
+        "MSG": "예약가능",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230612",
+        "SESN_NM": "봄 비수기 월요일",
+        "ALLC_ROOM_CNT": 8,
+        "RSRV_LOC_DIV_CD": "S",
+        "RSRV_POSBL_CNT": "1"
+      },
+      {
+        "MSG": "예약가능",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230613",
+        "SESN_NM": "봄 비수기 화요일",
+        "ALLC_ROOM_CNT": 8,
+        "RSRV_LOC_DIV_CD": "S",
+        "RSRV_POSBL_CNT": "3"
+      },
+      {
+        "MSG": "예약가능",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230614",
+        "SESN_NM": "봄 비수기 수요일",
+        "ALLC_ROOM_CNT": 8,
+        "RSRV_LOC_DIV_CD": "S",
+        "RSRV_POSBL_CNT": "5"
+      },
+      {
+        "MSG": "예약가능",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230615",
+        "SESN_NM": "봄 비수기 목요일",
+        "ALLC_ROOM_CNT": 8,
+        "RSRV_LOC_DIV_CD": "S",
+        "RSRV_POSBL_CNT": "4"
+      },
+      {
+        "MSG": "예약가능",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230616",
+        "SESN_NM": "봄 비수기 준주말",
+        "ALLC_ROOM_CNT": 5,
+        "RSRV_LOC_DIV_CD": "S",
+        "RSRV_POSBL_CNT": "1"
+      },
+      {
+        "MSG": "예약가능",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230617",
+        "SESN_NM": "봄 비수기 주말",
+        "ALLC_ROOM_CNT": 5,
+        "RSRV_LOC_DIV_CD": "S",
+        "RSRV_POSBL_CNT": "1"
+      },
+      {
+        "MSG": "예약불가",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230618",
+        "SESN_NM": "봄 비수기 일요일",
+        "ALLC_ROOM_CNT": 0,
+        "RSRV_LOC_DIV_CD": "C",
+        "RSRV_POSBL_CNT": "0"
+      },
+      {
+        "MSG": "예약가능",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230619",
+        "SESN_NM": "봄 비수기 월요일",
+        "ALLC_ROOM_CNT": 8,
+        "RSRV_LOC_DIV_CD": "S",
+        "RSRV_POSBL_CNT": "3"
+      },
+      {
+        "MSG": "예약가능",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230620",
+        "SESN_NM": "봄 비수기 화요일",
+        "ALLC_ROOM_CNT": 8,
+        "RSRV_LOC_DIV_CD": "S",
+        "RSRV_POSBL_CNT": "1"
+      },
+      {
+        "MSG": "예약가능",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230621",
+        "SESN_NM": "봄 비수기 수요일",
+        "ALLC_ROOM_CNT": 8,
+        "RSRV_LOC_DIV_CD": "S",
+        "RSRV_POSBL_CNT": "2"
+      },
+      {
+        "MSG": "예약불가",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230622",
+        "SESN_NM": "봄 비수기 목요일",
+        "ALLC_ROOM_CNT": 0,
+        "RSRV_LOC_DIV_CD": "C",
+        "RSRV_POSBL_CNT": "0"
+      },
+      {
+        "MSG": "예약가능",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230623",
+        "SESN_NM": "봄 비수기 준주말",
+        "ALLC_ROOM_CNT": 5,
+        "RSRV_LOC_DIV_CD": "S",
+        "RSRV_POSBL_CNT": "5"
+      },
+      {
+        "MSG": "예약가능",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230624",
+        "SESN_NM": "봄 비수기 주말",
+        "ALLC_ROOM_CNT": 5,
+        "RSRV_LOC_DIV_CD": "S",
+        "RSRV_POSBL_CNT": "5"
+      },
+      {
+        "MSG": "예약불가",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230625",
+        "SESN_NM": "봄 비수기 일요일",
+        "ALLC_ROOM_CNT": 0,
+        "RSRV_LOC_DIV_CD": "C",
+        "RSRV_POSBL_CNT": "0"
+      },
+      {
+        "MSG": "예약가능",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230626",
+        "SESN_NM": "봄 비수기 월요일",
+        "ALLC_ROOM_CNT": 8,
+        "RSRV_LOC_DIV_CD": "S",
+        "RSRV_POSBL_CNT": "1"
+      },
+      {
+        "MSG": "예약불가",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230627",
+        "SESN_NM": "봄 비수기 화요일",
+        "ALLC_ROOM_CNT": 0,
+        "RSRV_LOC_DIV_CD": "C",
+        "RSRV_POSBL_CNT": "0"
+      },
+      {
+        "MSG": "예약불가",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230628",
+        "SESN_NM": "봄 비수기 수요일",
+        "ALLC_ROOM_CNT": 0,
+        "RSRV_LOC_DIV_CD": "C",
+        "RSRV_POSBL_CNT": "0"
+      },
+      {
+        "MSG": "예약불가",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230629",
+        "SESN_NM": "봄 비수기 목요일",
+        "ALLC_ROOM_CNT": 0,
+        "RSRV_LOC_DIV_CD": "C",
+        "RSRV_POSBL_CNT": "0"
+      },
+      {
+        "MSG": "예약가능",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230630",
+        "SESN_NM": "봄 비수기 준주말",
+        "ALLC_ROOM_CNT": 5,
+        "RSRV_LOC_DIV_CD": "S",
+        "RSRV_POSBL_CNT": "5"
+      },
+      {
+        "MSG": "예약가능",
+        "ROOM_TYPE_CD": "FAM",
+        "LOC_CD": "2101",
+        "SESN_DATE": "20230701",
+        "SESN_NM": "봄 비수기 주말",
+        "ALLC_ROOM_CNT": 5,
+        "RSRV_LOC_DIV_CD": "S",
+        "RSRV_POSBL_CNT": "5"
+      }
+    ]
+}

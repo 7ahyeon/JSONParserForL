@@ -1,0 +1,23 @@
+{
+    "ds_prcsResult": [
+        {
+            "PROC_DS": "2023-05-23 15:31:37.023",
+            "PROC_CD": null,
+            "CUST_NO": "0000000002",
+            "LOC_CD": "2101",
+            "ARRV_DATE": "20230716",
+            "OVNT_CNT": 2,
+            "CHKOT_EXPT_DATE": "20230718",
+            "RSRV_CUST_NM": "조아현",
+            "RSRV_CUST_TEL_NO2": "010",
+            "RSRV_CUST_TEL_NO3": "0000",
+            "RSRV_CUST_TEL_NO4": "0000",
+            "INHS_CUST_NM": "조아현",
+            "INHS_CUST_TEL_NO2": "010",
+            "INHS_CUST_TEL_NO3": "0000",
+            "INHS_CUST_TEL_NO4": "0000",
+            "RSRV_DATE": "20230504",
+            "CUST_IDNT_NO": "195176"
+        }
+    ]
+}
