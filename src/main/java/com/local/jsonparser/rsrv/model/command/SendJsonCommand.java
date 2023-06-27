@@ -17,16 +17,17 @@ import java.net.URL;
 public class SendJsonCommand implements Command {
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse res) {
+        HttpURLConnection con = null;
         try {
             // 요청을 보낼 URL
             URL url = new URL("http://localhost:8002/main.do");
             String sendRequest = Application.application();
-            HttpURLConnection con = null;
+            con = null;
             con = (HttpURLConnection) url.openConnection();
             con.setDoOutput(true);
             con.connect();
 
-            send(con, sendRequest.getBytes());
+            send(con, ("RsrvRequest=" + sendRequest).getBytes());
             int resCode = con.getResponseCode();
             if (resCode == HttpURLConnection.HTTP_OK) {
                 String result = read(con);
@@ -35,15 +36,15 @@ public class SendJsonCommand implements Command {
             } else {
                 throw new IOException(
                         "ERROR : Communication Error\nMSG Code : " + resCode);
-                )
-            } catch (Exception e){
-
             }
-
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            con.disconnect();
         }
         return null;
     }
