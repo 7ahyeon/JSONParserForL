@@ -21,21 +21,38 @@ public class SendJsonCommand implements Command {
 
         try {
             // 요청을 보낼 URL
-            URL url = new URL("http://localhost:8002/main.do");
+            URL url = new URL("http://localhost:8002/receiveJson.do");
 
             con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("POST");
             con.setRequestProperty("Content-Type", "application/json");
+            con.setRequestProperty("Accept", "application/json");
             con.setConnectTimeout(20 * 1000);
 
             String sendRequest = Application.application();
+
             // POST 방식으로 JSON 전송
             con.setDoOutput(true);
             bw = new BufferedWriter(new OutputStreamWriter(con.getOutputStream()));
             bw.write(sendRequest);
+            System.out.println("요청 JSON 전송");
             System.out.println(sendRequest);
             bw.flush();
             bw.close();
+
+            con.connect();
+            // 서버에서 보낸 응답 데이터 수신
+            br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            String strData;
+            sb = new StringBuffer();
+            while ((strData = br.readLine()) != null) {
+                sb.append(strData);
+            }
+            br.close();
+
+            String jsonContent = sb.toString();
+            System.out.println("응답 JSON 수신");
+            System.out.println(jsonContent);
 
             int resCode = con.getResponseCode();
             System.out.println(resCode);

@@ -28,7 +28,7 @@ public class JsonToObjectImpl implements JsonToObject {
             // 요청
             RsrvRequest rsrvRequest = gson.fromJson(jsonContent, RsrvRequest.class);
             return rsrvRequest;
-        } else if (jsonContent.contains("ds_prcsResult")||jsonContent.contains("ds_prcsResults")) {
+        } else if (jsonContent.contains("ds_prcsResult")||jsonContent.contains("ds_result")) {
             // 응답
             RsrvResponse rsrvResponse = gson.fromJson(jsonContent, RsrvResponse.class);
             return rsrvResponse;

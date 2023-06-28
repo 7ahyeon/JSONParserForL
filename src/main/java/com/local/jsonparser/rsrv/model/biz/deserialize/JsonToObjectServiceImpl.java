@@ -18,7 +18,7 @@ public class JsonToObjectServiceImpl implements JsonToObjectService {
             // 요청
             RsrvRequest rsrvRequest = (RsrvRequest) jsonToObject.bindingObject(jsonContent);
             return rsrvRequest;
-        } else if (jsonContent.contains("ds_prcsResult")||jsonContent.contains("ds_prcsResults")) {
+        } else if (jsonContent.contains("ds_prcsResult")||jsonContent.contains("ds_result")) {
             // 응답
             RsrvResponse rsrvResponse = (RsrvResponse) jsonToObject.bindingObject(jsonContent);
             return rsrvResponse;
