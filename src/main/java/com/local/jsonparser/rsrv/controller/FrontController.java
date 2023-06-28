@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 
 // @WebServlet() : 서블릿 자동 등록(접근 경로 맵핑 어노테이션)
 // *.do : 보안을 위하여 기존 서블릿 이름이 아닌 .do URL 패턴 호출
@@ -23,11 +24,15 @@ public class FrontController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-       doAction(req, resp);
+        resp.setContentType("text/html; charset=UTF-8");
+        resp.setCharacterEncoding("UTF-8");
+        doAction(req, resp);
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
         // setCharacterEncoding : 요청 데이터 문자 타입 UTF-8 처리
+        resp.setContentType("text/html; charset=UTF-8");
+        resp.setCharacterEncoding("UTF-8");
         doAction(req, resp);
     }
 
@@ -51,8 +56,17 @@ public class FrontController extends HttpServlet {
         // 커맨드 실행
         String path = command.execute(req, resp);
 
-        // 커맨드 실행 실패시 메인 페이지 포워딩
-        if (path == null || path.equals("") ) {
+
+        if (path.endsWith(".jsp")) {
+            try {
+                req.getRequestDispatcher(path).forward(req,resp);
+            } catch (ServletException e) {
+                throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            // 커맨드 실행 실패시 메인 페이지 포워딩
+        } else if (path == null || path.equals("") ) {
             // include() : 다른 자원의 수행 결과를 클라이언트로부터 요청된 Servlet 안에 포함하여 응답
             // forward() : 다른 자원의 수행 결과가 대신 클라이언트로 응답
             try {
@@ -62,7 +76,6 @@ public class FrontController extends HttpServlet {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        } else {
         }
     }
 }

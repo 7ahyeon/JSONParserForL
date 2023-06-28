@@ -22,8 +22,9 @@ public class RsrvSelectImpl implements RsrvSelect{
     public int selectNum(int selectCnt) {
         int choice = 0;
         while(choice == 0){
-            Scanner sc = new Scanner(System.in);
             System.out.print("입력 > ");
+
+            Scanner sc = new Scanner(System.in);
             String selectSC = sc.nextLine();
             if (selectSC.matches(REGEX)) {
                 if (selectSC.getBytes().length == 1) {
