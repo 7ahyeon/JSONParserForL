@@ -1,6 +1,9 @@
 package com.local.jsonparser.rsrv.model.biz.cli;
 
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class RsrvSelectImpl implements RsrvSelect{
@@ -24,8 +27,21 @@ public class RsrvSelectImpl implements RsrvSelect{
         while(choice == 0){
             System.out.print("입력 > ");
 
-            Scanner sc = new Scanner(System.in);
-            String selectSC = sc.nextLine();
+            InputStreamReader in=new InputStreamReader(System.in);
+            BufferedReader read=new BufferedReader(in);
+            String selectSC = null;
+            try {
+                selectSC = read.readLine();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            } finally {
+                try {
+                    in.close();
+                    read.close();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
             if (selectSC.matches(REGEX)) {
                 if (selectSC.getBytes().length == 1) {
                     choice =  Integer.parseInt(selectSC);
@@ -44,6 +60,7 @@ public class RsrvSelectImpl implements RsrvSelect{
                 choice = 0;
             }
         }
+
     return choice;
     }
 }

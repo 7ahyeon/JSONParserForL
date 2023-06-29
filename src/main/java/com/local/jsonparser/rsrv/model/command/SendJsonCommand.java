@@ -2,9 +2,9 @@ package com.local.jsonparser.rsrv.model.command;
 
 import com.local.jsonparser.rsrv.model.biz.Application;
 
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -13,13 +13,16 @@ import java.net.URL;
 public class SendJsonCommand implements Command {
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse res) {
+        int select = Integer.parseInt(req.getParameter("select"));
+        String sendRequest = Application.application(select);
+
         HttpURLConnection con = null;
         BufferedWriter bw = null;
         BufferedReader br = null;
         StringBuffer sb = null;
-        ServletOutputStream out = null;
 
         try {
+
             // 요청을 보낼 URL
             URL url = new URL("http://localhost:8002/receiveJson.do");
 
@@ -29,7 +32,7 @@ public class SendJsonCommand implements Command {
             con.setRequestProperty("Accept", "application/json");
             con.setConnectTimeout(20 * 1000);
 
-            String sendRequest = Application.application();
+
 
             // POST 방식으로 JSON 전송
             con.setDoOutput(true);
