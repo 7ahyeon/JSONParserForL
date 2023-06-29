@@ -1,6 +1,9 @@
 package com.local.jsonparser.rsrv.model.command;
 
+import com.local.jsonparser.rsrv.model.biz.AppConfig;
 import com.local.jsonparser.rsrv.model.biz.Application;
+import com.local.jsonparser.rsrv.model.biz.deserialize.JsonToObjectService;
+import com.local.jsonparser.rsrv.model.dto.resp.RsrvResponse;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,7 +25,6 @@ public class SendJsonCommand implements Command {
         StringBuffer sb = null;
 
         try {
-
             // 요청을 보낼 URL
             URL url = new URL("http://localhost:8002/receiveJson.do");
 
@@ -31,8 +33,6 @@ public class SendJsonCommand implements Command {
             con.setRequestProperty("Content-Type", "application/json");
             con.setRequestProperty("Accept", "application/json");
             con.setConnectTimeout(20 * 1000);
-
-
 
             // POST 방식으로 JSON 전송
             con.setDoOutput(true);
@@ -59,6 +59,11 @@ public class SendJsonCommand implements Command {
 
             int resCode = con.getResponseCode();
             System.out.println(resCode);
+            AppConfig appConfig = new AppConfig();
+            JsonToObjectService jsonToObjectService = appConfig.jsonToObjectService();
+            RsrvResponse rsrvResponse = (RsrvResponse) jsonToObjectService.JsonToObject(jsonContent);
+            System.out.println("응답 JSON Object 바인딩 결과");
+            System.out.println(rsrvResponse);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
