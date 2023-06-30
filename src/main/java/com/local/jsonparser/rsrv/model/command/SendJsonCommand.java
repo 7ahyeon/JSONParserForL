@@ -7,7 +7,6 @@ import com.local.jsonparser.rsrv.model.dto.resp.RsrvResponse;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
