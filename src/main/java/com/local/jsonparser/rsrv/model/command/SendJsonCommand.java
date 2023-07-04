@@ -1,8 +1,11 @@
 package com.local.jsonparser.rsrv.model.command;
 
-import com.local.jsonparser.rsrv.model.biz.AppConfig;
-import com.local.jsonparser.rsrv.model.biz.Application;
-import com.local.jsonparser.rsrv.model.biz.deserialize.JsonToObjectService;
+import com.local.jsonparser.rsrv.model.biz.deserialize.JsonToObject;
+import com.local.jsonparser.rsrv.model.biz.deserialize.JsonToObjectImpl;
+import com.local.jsonparser.rsrv.model.biz.filereader.FileReaderService;
+import com.local.jsonparser.rsrv.model.biz.request.RequestService;
+import com.local.jsonparser.rsrv.model.biz.request.RequestServiceImpl;
+import com.local.jsonparser.rsrv.model.biz.serialize.ObjectToJson;
 import com.local.jsonparser.rsrv.model.dto.resp.RsrvResponse;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,10 +16,14 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class SendJsonCommand implements Command {
+
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse res) {
+        final RequestService requestService = new RequestServiceImpl(JsonToObject jsonToObject, FileReaderService fileReaderService, ObjectToJson objectToJson);
+        final JsonToObject jsonToObject = new JsonToObjectImpl();
+
         int select = Integer.parseInt(req.getParameter("select"));
-        String sendRequest = Application.application(select);
+        String sendRequest = requestService.createRequestJson(select) + select;
 
         HttpURLConnection con = null;
         BufferedWriter bw = null;
@@ -58,9 +65,7 @@ public class SendJsonCommand implements Command {
 
             int resCode = con.getResponseCode();
             System.out.println(resCode);
-            AppConfig appConfig = new AppConfig();
-            JsonToObjectService jsonToObjectService = appConfig.jsonToObjectService();
-            RsrvResponse rsrvResponse = (RsrvResponse) jsonToObjectService.JsonToObject(jsonContent);
+            RsrvResponse rsrvResponse = (RsrvResponse) jsonToObject.bindingObject(jsonContent);
             System.out.println("응답 JSON Object 바인딩 결과");
             System.out.println(rsrvResponse);
         } catch (MalformedURLException e) {

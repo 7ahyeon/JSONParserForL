@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 
 // @WebServlet() : 서블릿 자동 등록(접근 경로 맵핑 어노테이션)
 // *.do : 보안을 위하여 기존 서블릿 이름이 아닌 .do URL 패턴 호출
